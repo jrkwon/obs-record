@@ -1,5 +1,7 @@
 #define PIN_VICON_INPUT   7
 #define BAUD_RATE         115200
+#define RECORD_START_KEY  's'
+#define RECORD_STOP_KEY   'e'
 
 int prevSensorValue;
 int sensorValue;
@@ -19,9 +21,9 @@ void loop() {
   sensorValue = digitalRead(PIN_VICON_INPUT);
 
   if (prevSensorValue == LOW && sensorValue == HIGH)
-    Serial.write('s'); // start record
+    Serial.write(RECORD_START_KEY); // start record
   else if (prevSensorValue == HIGH && sensorValue == LOW)
-    Serial.write('e'); // end record
+    Serial.write(RECORD_STOP_KEY); // end record
 
   prevSensorValue = sensorValue;
 }
