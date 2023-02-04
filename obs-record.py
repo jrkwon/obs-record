@@ -19,6 +19,9 @@ def main(args):
     print('Monitoring VICON trigger signal...')
     print('** Make sure your OBS window is focused.')
 
+    pyautogui.alert('Click OK when you are ready. Make sure the OBS window to be focused.', 'VICON Trigger Monitor for OBS', button='OK')
+
+
     while(True):
         key = ser.read() # read one byte
         if key == record_start_key:
