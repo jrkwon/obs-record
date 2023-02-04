@@ -15,6 +15,7 @@ def main(args):
     ser.open()
 
     print('Monitoring VICON trigger signal...')
+    print('** Make sure your OBS window is focused.')
 
     while(True):
         key = read(1) # wait unitl read a char
