@@ -18,7 +18,7 @@ def main(args):
     print('** Make sure your OBS window is focused.')
 
     while(True):
-        key = read(1) # wait unitl read a char
+        key = ser.read() # read one byte
         if key == record_start_key:
             pyautogui.press(record_start_hotkey)
             if args.verbose:
