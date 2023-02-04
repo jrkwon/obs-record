@@ -2,15 +2,17 @@ import serial
 import argparse
 import pyautogui
 
+# config
 record_start_key = 's'
 record_stop_key = 'e'
 record_start_hotkey = 'f3'
 record_stop_hotkey = 'f4'
+baudrate = 115200
 
 def main(args):
     # init serial port
     ser = serial.Serial()
-    ser.baudrate = 115200
+    ser.baudrate = baudrate
     ser.port = args.port
     ser.open()
 
