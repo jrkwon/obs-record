@@ -16,11 +16,11 @@ def main(args):
     ser.port = args.port
     ser.open()
 
-    print('OBS-RECORD via VICON trigger signals: F3-Record, F4-Stop')
-    print('** Make sure your OBS window is focused.')
-
     pyautogui.alert('Click OK when you are ready. Make sure the OBS window to be focused.', 'VICON Trigger Monitor for OBS', button='OK')
 
+    print('>>> OBS-RECORD via VICON trigger signals <<<')
+    print('-- In OBS Studio, the function keys must be set with F3-Record and F4-Stop')
+    print('** Make sure your OBS Studio window is focused **')
 
     while(True):
         key = ser.read() # read one byte
@@ -35,7 +35,7 @@ def main(args):
 
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description='OBS Recorder: triggered by VICON ver 0.2 by Jaerock Kwon, 2023')
+    parser = argparse.ArgumentParser(description='OBS Recorder: triggered by VICON ver 0.3 by Jaerock Kwon, 2023')
     parser.add_argument("port", type=str, help="Serial port name. COM{#} or /dev/ttyUSB{#}")
     parser.add_argument("-v", "--verbose", type=bool, default=True, help="increase output verbosity")
     parser.add_argument("-b", "--baudrate", type=int, default=115200, choices=[9600, 14400, 19200, 28800, 31250, 38400, 57600, 115200], help="baudrate")
