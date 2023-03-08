@@ -27,6 +27,41 @@
 - Activate the environment.
   - `$ conda activate obs-record`
 
+## Use vicon-timestamp.py
+
+### How to use
+
+#### Specify a path and port
+
+`path` is the directory where the timestamp is saved.
+
+ex) your Arduino board is connected to `COM1`
+```shell
+python vicon-timestamp.py path-to-the-folder COM1
+```
+
+#### All options
+
+```shell
+usage: vicon-timestamp.py [-h] [-v VERBOSE]
+                          [-b {9600,14400,19200,28800,31250,38400,57600,115200}]
+                          path port
+
+VICON Trigger Timestamp ver 0.1 by Jaerock Kwon, 2023
+
+positional arguments:
+  path                  path to the location where the timestamp is saved
+  port                  Serial port name. COM{#} or /dev/ttyUSB{#}
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -v VERBOSE, --verbose VERBOSE
+                        increase output verbosity
+  -b {9600,14400,19200,28800,31250,38400,57600,115200}, --baudrate {9600,14400,19200,28800,31250,38400,57600,115200}
+                        baudrate
+
+```
+
 ## Use obs-record.py
 
 - First, make sure your Arduino board is connected and running.
